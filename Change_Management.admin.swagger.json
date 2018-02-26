@@ -3,7 +3,7 @@
     "info": {
         "title": "Change Management", 
         "description": "This is Swagger UI environment generated for the TMF Change Management specification", 
-        "version": "2.0"
+        "version": "2.0.0"
     }, 
     "host": "biologeek.orange-labs.fr", 
     "basePath": "/tmf-api/changeManagement", 
@@ -1269,38 +1269,12 @@
                 }
             }
         }, 
-        "ChangeRequestAttachment": {
-            "type": "object", 
-            "description": "A document or other file attached to the information about a Change Request to help explain the change being \nimplemented as part of this Change Request.", 
-            "properties": {
-                "dateTime": {
-                    "type": "string", 
-                    "format": "date-time", 
-                    "description": "Date and time of the attachment generated."
-                }, 
-                "description": {
-                    "type": "string", 
-                    "description": "The description of the attachment."
-                }, 
-                "href": {
-                    "type": "string", 
-                    "description": "Reference of the attachment."
-                }, 
-                "id": {
-                    "type": "string", 
-                    "description": "Identifier of the attachment."
-                }, 
-                "relatedParty": {
-                    "type": "array", 
-                    "items": {
-                        "$ref": "#/definitions/RelatedPartyRef"
-                    }
-                }
-            }
-        }, 
         "WorkLog": {
             "type": "object", 
             "description": "A record of the work performed on the change request during the investigation and resolution process.", 
+			 "required": [
+                "creatDateTime"
+            ], 
             "properties": {
                 "creatDateTime": {
                     "type": "string", 
@@ -1339,7 +1313,11 @@
         }, 
         "ChangeRequestSpecification": {
             "type": "object", 
-            "description": "Defines a set of attributes related to Change Request.", 
+            "description": "Defines a set of attributes related to Change Request.",
+            "required": [
+                "id", 
+                "href"
+            ], 	
             "properties": {
                 "description": {
                     "type": "string", 
@@ -1365,7 +1343,11 @@
         "ImpactEntityRef": {
             "type": "object", 
             "description": "Defines the entities (product, service, resource, and other related objects) which will be impacted while the change \nrequest is executed.", 
-            "properties": {
+            "required": [
+                "id", 
+                "href"
+            ], 	
+			"properties": {
                 "@referredType": {
                     "type": "string", 
                     "description": "Indicates the type of resource. Here can be ImpactEntity."
@@ -1391,7 +1373,11 @@
         "SLARef": {
             "type": "object", 
             "description": "ServiceLevelAgreement reference: A service level agreement (SLA) is a type of agreement that represents a formal negotiated agreement between two parties designed to create a common understanding about products, services, priorities, responsibilities, and so forth. The SLA is a set of appropriate procedures and targets formally or informally agreed between parties in order to achieve and maintain specified Quality of Service.", 
-            "properties": {
+            "required": [
+                "id", 
+                "href"
+            ], 	
+			"properties": {
                 "href": {
                     "type": "string", 
                     "description": "Reference of the service level agreement"
@@ -1409,6 +1395,10 @@
         "ChangeRequestCharacteristic": {
             "type": "object", 
             "description": "Characteristics of the change request to instantiate or to modify", 
+            "required": [
+                "name", 
+                "value"
+            ], 	
             "properties": {
                 "name": {
                     "type": "string", 
@@ -1468,7 +1458,7 @@
         }, 
         "CategoryRef": {
             "type": "object", 
-            "description": "Channel(ChannelRef)The channel where the recommendation is used. May be online web, mobile app, social ,etc.", 
+            "description": "the category of change request", 
             "properties": {
                 "href": {
                     "type": "string", 
@@ -1511,7 +1501,11 @@
         "RelatedChangeRequestRef": {
             "type": "object", 
             "description": "An existing Change Request that has some form of correlation with the given Change Request.", 
-            "properties": {
+            "required": [
+                "id", 
+                "href"
+            ], 	
+			"properties": {
                 "@referredType": {
                     "type": "string"
                 }, 
@@ -1539,6 +1533,9 @@
         "Attachment": {
             "type": "object", 
             "description": "Complements the description of an element (for instance a product) through video, pictures...", 
+			 "required": [
+                "href"
+            ], 
             "properties": {
                 "description": {
                     "type": "string", 
@@ -1606,7 +1603,10 @@
         "Record": {
             "type": "object", 
             "description": "A record in a worklog.", 
-            "properties": {
+            "required": [
+                "dateTime"
+            ], 	
+			"properties": {
                 "dateTime": {
                     "type": "string", 
                     "format": "date-time", 
