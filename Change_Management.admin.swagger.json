@@ -3,10 +3,10 @@
     "info": {
         "title": "Change Management", 
         "description": "This is Swagger UI environment generated for the TMF Change Management specification", 
-        "version": "2.0.0"
+        "version": "2.0"
     }, 
     "host": "biologeek.orange-labs.fr", 
-    "basePath": "/tmf-api/changeManagement", 
+    "basePath": "/tmf-api/changeManagement/v2/", 
     "schemes": [
         "https"
     ], 
@@ -33,428 +33,417 @@
                         "description": "Comma separated properties to display in response"
                     }, 
                     {
-                        "type": "string", 
+                        "type": "integer", 
                         "required": false, 
                         "in": "query", 
-                        "name": "@baseType", 
-                        "description": "For filtering: Indicates the type of resource. Here can be change request."
+                        "name": "offset", 
+                        "description": "Requested index for start of resources to be provided in response"
                     }, 
                     {
-                        "type": "string", 
+                        "type": "integer", 
                         "required": false, 
                         "in": "query", 
-                        "name": "@schemaLocation", 
-                        "description": "For filtering: Link to schema describing this REST resource."
+                        "name": "limit", 
+                        "description": "Requested number of resources to be provided in response"
                     }, 
                     {
-                        "type": "string", 
-                        "required": false, 
+                        "format": "date-time", 
                         "in": "query", 
-                        "name": "@type", 
-                        "description": "For filtering: Indicates the type of resource. Here can be change request."
-                    }, 
-                    {
+                        "type": "string", 
                         "name": "actualEndTime", 
-                        "format": "date-time", 
-                        "required": false, 
-                        "in": "query", 
-                        "type": "string", 
-                        "description": "For filtering: Date and time when the change implementation is finished \nactually."
+                        "description": "For filtering on the base of 'actualEndTime' field (equality)"
                     }, 
                     {
+                        "name": "actualEndTime.gt", 
+                        "description": "For filtering on the base of 'actualEndTime' field (great than)", 
+                        "type": "string", 
+                        "format": "date-time", 
+                        "in": "query"
+                    }, 
+                    {
+                        "name": "actualEndTime.lt", 
+                        "description": "For filtering on the base of 'actualEndTime' field (less than)", 
+                        "type": "string", 
+                        "format": "date-time", 
+                        "in": "query"
+                    }, 
+                    {
+                        "format": "date-time", 
+                        "in": "query", 
+                        "type": "string", 
                         "name": "actualStartTime", 
-                        "format": "date-time", 
-                        "required": false, 
-                        "in": "query", 
-                        "type": "string", 
-                        "description": "For filtering: Date and time when the change implementation is started actually."
+                        "description": "For filtering on the base of 'actualStartTime' field (equality)"
                     }, 
                     {
+                        "name": "actualStartTime.gt", 
+                        "description": "For filtering on the base of 'actualStartTime' field (great than)", 
                         "type": "string", 
-                        "required": false, 
+                        "format": "date-time", 
+                        "in": "query"
+                    }, 
+                    {
+                        "name": "actualStartTime.lt", 
+                        "description": "For filtering on the base of 'actualStartTime' field (less than)", 
+                        "type": "string", 
+                        "format": "date-time", 
+                        "in": "query"
+                    }, 
+                    {
                         "in": "query", 
+                        "type": "string", 
                         "name": "budget", 
-                        "description": "For filtering: The budget reserved for the change."
+                        "description": "For filtering on the base of 'budget' field (equality)"
                     }, 
                     {
-                        "type": "string", 
-                        "required": false, 
                         "in": "query", 
+                        "type": "string", 
                         "name": "channel", 
-                        "description": "For filtering: A channel represents the way the Change Request was created"
+                        "description": "For filtering on the base of 'channel' field (equality)"
                     }, 
                     {
+                        "format": "date-time", 
+                        "in": "query", 
+                        "type": "string", 
                         "name": "completionDate", 
-                        "format": "date-time", 
-                        "required": false, 
-                        "in": "query", 
-                        "type": "string", 
-                        "description": "For filtering: Date and time when the change request is confirmed to be \ncompleted"
+                        "description": "For filtering on the base of 'completionDate' field (equality)"
                     }, 
                     {
+                        "name": "completionDate.gt", 
+                        "description": "For filtering on the base of 'completionDate' field (great than)", 
                         "type": "string", 
-                        "required": false, 
+                        "format": "date-time", 
+                        "in": "query"
+                    }, 
+                    {
+                        "name": "completionDate.lt", 
+                        "description": "For filtering on the base of 'completionDate' field (less than)", 
+                        "type": "string", 
+                        "format": "date-time", 
+                        "in": "query"
+                    }, 
+                    {
                         "in": "query", 
+                        "type": "string", 
                         "name": "currency", 
-                        "description": "For filtering: The used currency related with cost"
+                        "description": "For filtering on the base of 'currency' field (equality)"
                     }, 
                     {
-                        "type": "string", 
-                        "required": false, 
                         "in": "query", 
+                        "type": "string", 
                         "name": "externalId", 
-                        "description": "For filtering: ID given by the requestor to facilitate the relationship set up and \nsearches afterwards)"
+                        "description": "For filtering on the base of 'externalId' field (equality)"
                     }, 
                     {
-                        "type": "string", 
-                        "required": false, 
                         "in": "query", 
+                        "type": "string", 
                         "name": "impact", 
-                        "description": "For filtering: Indicates how about the impact by this change"
+                        "description": "For filtering on the base of 'impact' field (equality)"
                     }, 
                     {
+                        "format": "date-time", 
+                        "in": "query", 
+                        "type": "string", 
                         "name": "plannedEndTime", 
-                        "format": "date-time", 
-                        "required": false, 
-                        "in": "query", 
-                        "type": "string", 
-                        "description": "For filtering: Date and time when the change implementation is planned to be \nfinished."
+                        "description": "For filtering on the base of 'plannedEndTime' field (equality)"
                     }, 
                     {
+                        "name": "plannedEndTime.gt", 
+                        "description": "For filtering on the base of 'plannedEndTime' field (great than)", 
+                        "type": "string", 
+                        "format": "date-time", 
+                        "in": "query"
+                    }, 
+                    {
+                        "name": "plannedEndTime.lt", 
+                        "description": "For filtering on the base of 'plannedEndTime' field (less than)", 
+                        "type": "string", 
+                        "format": "date-time", 
+                        "in": "query"
+                    }, 
+                    {
+                        "format": "date-time", 
+                        "in": "query", 
+                        "type": "string", 
                         "name": "plannedStartTime", 
-                        "format": "date-time", 
-                        "required": false, 
-                        "in": "query", 
-                        "type": "string", 
-                        "description": "For filtering: Date and time when the change implementation is planned to be \nstarted."
+                        "description": "For filtering on the base of 'plannedStartTime' field (equality)"
                     }, 
                     {
+                        "name": "plannedStartTime.gt", 
+                        "description": "For filtering on the base of 'plannedStartTime' field (great than)", 
                         "type": "string", 
-                        "required": false, 
+                        "format": "date-time", 
+                        "in": "query"
+                    }, 
+                    {
+                        "name": "plannedStartTime.lt", 
+                        "description": "For filtering on the base of 'plannedStartTime' field (less than)", 
+                        "type": "string", 
+                        "format": "date-time", 
+                        "in": "query"
+                    }, 
+                    {
                         "in": "query", 
+                        "type": "string", 
                         "name": "priority", 
-                        "description": "For filtering: A way that can be used by consumers to prioritize change request in Change Management system"
+                        "description": "For filtering on the base of 'priority' field (equality)"
                     }, 
                     {
+                        "format": "date-time", 
+                        "in": "query", 
+                        "type": "string", 
                         "name": "requestDate", 
-                        "format": "date-time", 
-                        "required": false, 
-                        "in": "query", 
-                        "type": "string", 
-                        "description": "For filtering: Date and time when the change request is raised"
+                        "description": "For filtering on the base of 'requestDate' field (equality)"
                     }, 
                     {
+                        "name": "requestDate.gt", 
+                        "description": "For filtering on the base of 'requestDate' field (great than)", 
                         "type": "string", 
-                        "required": false, 
+                        "format": "date-time", 
+                        "in": "query"
+                    }, 
+                    {
+                        "name": "requestDate.lt", 
+                        "description": "For filtering on the base of 'requestDate' field (less than)", 
+                        "type": "string", 
+                        "format": "date-time", 
+                        "in": "query"
+                    }, 
+                    {
                         "in": "query", 
+                        "type": "string", 
                         "name": "requestType", 
-                        "description": "For filtering: Indicates the type of the change request."
+                        "description": "For filtering on the base of 'requestType' field (equality)"
                     }, 
                     {
-                        "type": "string", 
-                        "required": false, 
                         "in": "query", 
+                        "type": "string", 
                         "name": "risk", 
-                        "description": "For filtering: The risk to implement this change request."
+                        "description": "For filtering on the base of 'risk' field (equality)"
                     }, 
                     {
-                        "type": "string", 
-                        "required": false, 
                         "in": "query", 
+                        "type": "string", 
                         "name": "riskMitigationPlan", 
-                        "description": "For filtering: The risk mitigation plan."
+                        "description": "For filtering on the base of 'riskMitigationPlan' field (equality)"
                     }, 
                     {
-                        "type": "string", 
-                        "required": false, 
                         "in": "query", 
+                        "type": "string", 
                         "name": "riskValue", 
-                        "description": "For filtering: The additional cost if the risk will happen."
+                        "description": "For filtering on the base of 'riskValue' field (equality)"
                     }, 
                     {
+                        "format": "date-time", 
+                        "in": "query", 
+                        "type": "string", 
                         "name": "scheduledDate", 
-                        "format": "date-time", 
-                        "required": false, 
-                        "in": "query", 
-                        "type": "string", 
-                        "description": "For filtering: Date and time that the schedule is made."
+                        "description": "For filtering on the base of 'scheduledDate' field (equality)"
                     }, 
                     {
+                        "name": "scheduledDate.gt", 
+                        "description": "For filtering on the base of 'scheduledDate' field (great than)", 
                         "type": "string", 
-                        "required": false, 
+                        "format": "date-time", 
+                        "in": "query"
+                    }, 
+                    {
+                        "name": "scheduledDate.lt", 
+                        "description": "For filtering on the base of 'scheduledDate' field (less than)", 
+                        "type": "string", 
+                        "format": "date-time", 
+                        "in": "query"
+                    }, 
+                    {
                         "in": "query", 
+                        "type": "string", 
                         "name": "status", 
-                        "description": "For filtering: Status of the change request and it's a sub-state."
+                        "description": "For filtering on the base of 'status' field (equality)"
                     }, 
                     {
-                        "name": "attachment.dateTime", 
-                        "format": "date-time", 
-                        "required": false, 
                         "in": "query", 
                         "type": "string", 
-                        "description": "For filtering: Date and time of the attachment generated."
-                    }, 
-                    {
-                        "name": "workLog.creatDateTime", 
-                        "format": "date-time", 
-                        "required": false, 
-                        "in": "query", 
-                        "type": "string", 
-                        "description": "For filtering: Date and time of worklog generated."
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "workLog.lastUpdateDateTime", 
-                        "description": "For filtering: Date and time when the worklog updated."
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "incident.name", 
-                        "description": "For filtering: The name of the incident."
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "changeRequestSpecification.name", 
-                        "description": "For filtering: Name of the specification."
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "impactEntity.@referredType", 
-                        "description": "For filtering: Indicates the type of resource. Here can be ImpactEntity."
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "impactEntity.@schemaLocation", 
-                        "description": "For filtering: Link to schema describing this REST resource."
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "sla.@referredType", 
-                        "description": "For filtering: "
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "sla.@schemaLocation", 
-                        "description": "For filtering: "
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "sla.name", 
-                        "description": "For filtering: "
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "changeRequestCharacteristic.name", 
-                        "description": "For filtering: Name of the characteristic."
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "changeRequestCharacteristic.value", 
-                        "description": "For filtering: Value of the characteristic."
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "targetEntity.@referredType", 
-                        "description": "For filtering: "
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "targetEntity.@schemaLocation", 
-                        "description": "For filtering: "
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "relatedParty.name", 
-                        "description": "For filtering: Name of the related party"
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "relatedParty.role", 
-                        "description": "For filtering: Role of the related party."
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "category.name", 
-                        "description": "For filtering: Name of the category."
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "resolution.code", 
-                        "description": "For filtering: The resolution's code, it can be configured as a multiple level \nhierarchy."
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "resolution.name", 
-                        "description": "For filtering: The name of the resolution"
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "sla.name", 
-                        "description": "For filtering: Name of the service level agreement"
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "relatedParty.@referredType", 
-                        "description": "For filtering: Indicates the type of resource. Here can be related party."
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "relatedParty.@schemaLocation", 
-                        "description": "For filtering: Link to schema describing this REST resource."
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "relatedParty.name", 
-                        "description": "For filtering: "
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "relatedParty.role", 
-                        "description": "For filtering: "
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "relateChangeRequest.@referredType", 
-                        "description": "For filtering: "
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "relateChangeRequest.@schemaLocation", 
-                        "description": "For filtering: "
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "relateChangeRequest.correlation", 
-                        "description": "For filtering: The correlation between two change requests"
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
                         "name": "attachment.mimeType", 
-                        "description": "For filtering: "
+                        "description": "For filtering on the base of 'mimeType' field (equality)"
                     }, 
                     {
-                        "type": "string", 
-                        "required": false, 
                         "in": "query", 
+                        "type": "string", 
                         "name": "attachment.name", 
-                        "description": "For filtering: The path of the attached file in the communication message."
+                        "description": "For filtering on the base of 'name' field (equality)"
                     }, 
                     {
-                        "type": "string", 
-                        "required": false, 
                         "in": "query", 
+                        "type": "string", 
                         "name": "attachment.path", 
-                        "description": "For filtering: The path of the attached file in the communication message."
+                        "description": "For filtering on the base of 'path' field (equality)"
                     }, 
                     {
+                        "in": "query", 
+                        "type": "integer", 
                         "name": "attachment.size", 
-                        "format": "float", 
-                        "required": false, 
-                        "in": "query", 
-                        "type": "number", 
-                        "description": "For filtering: "
+                        "description": "For filtering on the base of 'size' field (equality)"
                     }, 
                     {
-                        "type": "string", 
-                        "required": false, 
+                        "name": "attachment.size.gt", 
+                        "description": "For filtering on the base of 'size' field (great than)", 
+                        "type": "integer", 
+                        "in": "query"
+                    }, 
+                    {
+                        "name": "attachment.size.lt", 
+                        "description": "For filtering on the base of 'size' field (less than)", 
+                        "type": "integer", 
+                        "in": "query"
+                    }, 
+                    {
                         "in": "query", 
+                        "type": "integer", 
                         "name": "attachment.sizeUnit", 
-                        "description": "For filtering: The name of attached file in the communication message"
+                        "description": "For filtering on the base of 'sizeUnit' field (equality)"
                     }, 
                     {
-                        "type": "string", 
-                        "required": false, 
+                        "name": "attachment.sizeUnit.gt", 
+                        "description": "For filtering on the base of 'sizeUnit' field (great than)", 
+                        "type": "integer", 
+                        "in": "query"
+                    }, 
+                    {
+                        "name": "attachment.sizeUnit.lt", 
+                        "description": "For filtering on the base of 'sizeUnit' field (less than)", 
+                        "type": "integer", 
+                        "in": "query"
+                    }, 
+                    {
                         "in": "query", 
+                        "type": "string", 
                         "name": "attachment.url", 
-                        "description": "For filtering: The name of attached file in the communication message"
+                        "description": "For filtering on the base of 'url' field (equality)"
                     }, 
                     {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "note.author", 
-                        "description": "For filtering: Author of the note"
-                    }, 
-                    {
-                        "name": "note.date", 
                         "format": "date-time", 
-                        "required": false, 
                         "in": "query", 
                         "type": "string", 
-                        "description": "For filtering: Date of the note"
+                        "name": "workLog.createDateTime", 
+                        "description": "For filtering on the base of 'createDateTime' field (equality)"
                     }, 
                     {
+                        "name": "workLog.createDateTime.gt", 
+                        "description": "For filtering on the base of 'createDateTime' field (great than)", 
                         "type": "string", 
-                        "required": false, 
+                        "format": "date-time", 
+                        "in": "query"
+                    }, 
+                    {
+                        "name": "workLog.createDateTime.lt", 
+                        "description": "For filtering on the base of 'createDateTime' field (less than)", 
+                        "type": "string", 
+                        "format": "date-time", 
+                        "in": "query"
+                    }, 
+                    {
                         "in": "query", 
+                        "type": "string", 
+                        "name": "workLog.lastUpdateDateTime", 
+                        "description": "For filtering on the base of 'lastUpdateDateTime' field (equality)"
+                    }, 
+                    {
+                        "in": "query", 
+                        "type": "string", 
+                        "name": "incident.name", 
+                        "description": "For filtering on the base of 'name' field (equality)"
+                    }, 
+                    {
+                        "in": "query", 
+                        "type": "string", 
+                        "name": "changeRequestSpecification.name", 
+                        "description": "For filtering on the base of 'name' field (equality)"
+                    }, 
+                    {
+                        "in": "query", 
+                        "type": "string", 
+                        "name": "changeRequestCharacteristic.name", 
+                        "description": "For filtering on the base of 'name' field (equality)"
+                    }, 
+                    {
+                        "in": "query", 
+                        "type": "string", 
+                        "name": "changeRequestCharacteristic.value", 
+                        "description": "For filtering on the base of 'value' field (equality)"
+                    }, 
+                    {
+                        "in": "query", 
+                        "type": "string", 
+                        "name": "relatedParty.name", 
+                        "description": "For filtering on the base of 'name' field (equality)"
+                    }, 
+                    {
+                        "in": "query", 
+                        "type": "string", 
+                        "name": "relatedParty.role", 
+                        "description": "For filtering on the base of 'role' field (equality)"
+                    }, 
+                    {
+                        "in": "query", 
+                        "type": "string", 
+                        "name": "resolution.code", 
+                        "description": "For filtering on the base of 'code' field (equality)"
+                    }, 
+                    {
+                        "in": "query", 
+                        "type": "string", 
+                        "name": "resolution.name", 
+                        "description": "For filtering on the base of 'name' field (equality)"
+                    }, 
+                    {
+                        "in": "query", 
+                        "type": "string", 
+                        "name": "sla.name", 
+                        "description": "For filtering on the base of 'name' field (equality)"
+                    }, 
+                    {
+                        "in": "query", 
+                        "type": "string", 
+                        "name": "relatedChangeRequest.correlation", 
+                        "description": "For filtering on the base of 'correlation' field (equality)"
+                    }, 
+                    {
+                        "in": "query", 
+                        "type": "string", 
+                        "name": "category.name", 
+                        "description": "For filtering on the base of 'name' field (equality)"
+                    }, 
+                    {
+                        "in": "query", 
+                        "type": "string", 
+                        "name": "note.author", 
+                        "description": "For filtering on the base of 'author' field (equality)"
+                    }, 
+                    {
+                        "format": "date-time", 
+                        "in": "query", 
+                        "type": "string", 
+                        "name": "note.date", 
+                        "description": "For filtering on the base of 'date' field (equality)"
+                    }, 
+                    {
+                        "name": "note.date.gt", 
+                        "description": "For filtering on the base of 'date' field (great than)", 
+                        "type": "string", 
+                        "format": "date-time", 
+                        "in": "query"
+                    }, 
+                    {
+                        "name": "note.date.lt", 
+                        "description": "For filtering on the base of 'date' field (less than)", 
+                        "type": "string", 
+                        "format": "date-time", 
+                        "in": "query"
+                    }, 
+                    {
+                        "in": "query", 
+                        "type": "string", 
                         "name": "note.text", 
-                        "description": "For filtering: Text of the note"
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "address.@referredType", 
-                        "description": "For filtering: Indicates the type of resource. Here can be address."
-                    }, 
-                    {
-                        "type": "string", 
-                        "required": false, 
-                        "in": "query", 
-                        "name": "address.@schemaLocation", 
-                        "description": "For filtering: Link to schema describing this REST resource."
+                        "description": "For filtering on the base of 'text' field (equality)"
                     }
                 ], 
                 "responses": {
@@ -739,19 +728,13 @@
         "ChangeRequest": {
             "type": "object", 
             "description": "Change Request is a type of request which can be used for the management and control of Change Management \nprocess between a customer and a service provider or between a service provider and a partner and vice versa.", 
+            "required": [
+                "status", 
+                "priority", 
+                "targetEntity", 
+                "changeRequestSpecification"
+            ], 
             "properties": {
-                "@baseType": {
-                    "type": "string", 
-                    "description": "Indicates the type of resource. Here can be change request."
-                }, 
-                "@schemaLocation": {
-                    "type": "string", 
-                    "description": "Link to schema describing this REST resource."
-                }, 
-                "@type": {
-                    "type": "string", 
-                    "description": "Indicates the type of resource. Here can be change request."
-                }, 
                 "actualEndTime": {
                     "type": "string", 
                     "format": "date-time", 
@@ -841,13 +824,14 @@
                 }, 
                 "status": {
                     "type": "string", 
-                    "description": "Status of the change request and it's a sub-state."
+                    "description": "Status of the change request and it\u00a1\u00afs a sub-state."
                 }, 
                 "attachment": {
                     "type": "array", 
                     "items": {
                         "$ref": "#/definitions/Attachment"
-                    }
+                    }, 
+                    "description": "The attachments of the communication message (when it is email type)."
                 }, 
                 "workLog": {
                     "$ref": "#/definitions/WorkLog"
@@ -867,12 +851,6 @@
                         "$ref": "#/definitions/ImpactEntityRef"
                     }
                 }, 
-                "sla": {
-                    "type": "array", 
-                    "items": {
-                        "$ref": "#/definitions/SLARef"
-                    }
-                }, 
                 "changeRequestCharacteristic": {
                     "type": "array", 
                     "items": {
@@ -889,6 +867,22 @@
                     "type": "array", 
                     "items": {
                         "$ref": "#/definitions/RelatedPartyRef"
+                    }, 
+                    "description": "The parties involved by the change request"
+                }, 
+                "resolution": {
+                    "$ref": "#/definitions/Resolution"
+                }, 
+                "sla": {
+                    "type": "array", 
+                    "items": {
+                        "$ref": "#/definitions/SLARef"
+                    }
+                }, 
+                "relatedChangeRequest": {
+                    "type": "array", 
+                    "items": {
+                        "$ref": "#/definitions/RelatedChangeRequestRef"
                     }
                 }, 
                 "category": {
@@ -897,23 +891,27 @@
                         "$ref": "#/definitions/CategoryRef"
                     }
                 }, 
-                "resolution": {
-                    "$ref": "#/definitions/Resolution"
-                }, 
-                "relateChangeRequest": {
-                    "type": "array", 
-                    "items": {
-                        "$ref": "#/definitions/RelatedChangeRequestRef"
-                    }
-                }, 
                 "note": {
                     "type": "array", 
                     "items": {
                         "$ref": "#/definitions/Note"
                     }
                 }, 
-                "address": {
-                    "$ref": "#/definitions/GeographicAddressRef"
+                "location": {
+                    "$ref": "#/definitions/GeographicAddressRef", 
+                    "description": "The place at which the change request occurred."
+                }, 
+                "@type": {
+                    "type": "string", 
+                    "description": "The class type of the actual resource (for type extension)."
+                }, 
+                "@schemaLocation": {
+                    "type": "string", 
+                    "description": "A link to the schema describing a resource (for type extension)."
+                }, 
+                "@baseType": {
+                    "type": "string", 
+                    "description": "The base type for use in polymorphic collections"
                 }
             }
         }, 
@@ -927,18 +925,6 @@
                 "changeRequestSpecification"
             ], 
             "properties": {
-                "@baseType": {
-                    "type": "string", 
-                    "description": "Indicates the type of resource. Here can be change request."
-                }, 
-                "@schemaLocation": {
-                    "type": "string", 
-                    "description": "Link to schema describing this REST resource."
-                }, 
-                "@type": {
-                    "type": "string", 
-                    "description": "Indicates the type of resource. Here can be change request."
-                }, 
                 "actualEndTime": {
                     "type": "string", 
                     "format": "date-time", 
@@ -1020,13 +1006,14 @@
                 }, 
                 "status": {
                     "type": "string", 
-                    "description": "Status of the change request and it's a sub-state."
+                    "description": "Status of the change request and it\u00a1\u00afs a sub-state."
                 }, 
                 "attachment": {
                     "type": "array", 
                     "items": {
                         "$ref": "#/definitions/Attachment"
-                    }
+                    }, 
+                    "description": "The attachments of the communication message (when it is email type)."
                 }, 
                 "workLog": {
                     "$ref": "#/definitions/WorkLog"
@@ -1046,12 +1033,6 @@
                         "$ref": "#/definitions/ImpactEntityRef"
                     }
                 }, 
-                "sla": {
-                    "type": "array", 
-                    "items": {
-                        "$ref": "#/definitions/SLARef"
-                    }
-                }, 
                 "changeRequestCharacteristic": {
                     "type": "array", 
                     "items": {
@@ -1068,6 +1049,22 @@
                     "type": "array", 
                     "items": {
                         "$ref": "#/definitions/RelatedPartyRef"
+                    }, 
+                    "description": "The parties involved by the change request"
+                }, 
+                "resolution": {
+                    "$ref": "#/definitions/Resolution"
+                }, 
+                "sla": {
+                    "type": "array", 
+                    "items": {
+                        "$ref": "#/definitions/SLARef"
+                    }
+                }, 
+                "relatedChangeRequest": {
+                    "type": "array", 
+                    "items": {
+                        "$ref": "#/definitions/RelatedChangeRequestRef"
                     }
                 }, 
                 "category": {
@@ -1076,23 +1073,27 @@
                         "$ref": "#/definitions/CategoryRef"
                     }
                 }, 
-                "resolution": {
-                    "$ref": "#/definitions/Resolution"
-                }, 
-                "relateChangeRequest": {
-                    "type": "array", 
-                    "items": {
-                        "$ref": "#/definitions/RelatedChangeRequestRef"
-                    }
-                }, 
                 "note": {
                     "type": "array", 
                     "items": {
                         "$ref": "#/definitions/Note"
                     }
                 }, 
-                "address": {
-                    "$ref": "#/definitions/GeographicAddressRef"
+                "location": {
+                    "$ref": "#/definitions/GeographicAddressRef", 
+                    "description": "The place at which the change request occurred."
+                }, 
+                "@type": {
+                    "type": "string", 
+                    "description": "The class type of the actual resource (for type extension)."
+                }, 
+                "@schemaLocation": {
+                    "type": "string", 
+                    "description": "A link to the schema describing a resource (for type extension)."
+                }, 
+                "@baseType": {
+                    "type": "string", 
+                    "description": "The base type for use in polymorphic collections"
                 }
             }
         }, 
@@ -1100,18 +1101,6 @@
             "type": "object", 
             "description": "Change Request is a type of request which can be used for the management and control of Change Management \nprocess between a customer and a service provider or between a service provider and a partner and vice versa.\nSkipped properties: id,href,id,href", 
             "properties": {
-                "@baseType": {
-                    "type": "string", 
-                    "description": "Indicates the type of resource. Here can be change request."
-                }, 
-                "@schemaLocation": {
-                    "type": "string", 
-                    "description": "Link to schema describing this REST resource."
-                }, 
-                "@type": {
-                    "type": "string", 
-                    "description": "Indicates the type of resource. Here can be change request."
-                }, 
                 "actualEndTime": {
                     "type": "string", 
                     "format": "date-time", 
@@ -1193,13 +1182,14 @@
                 }, 
                 "status": {
                     "type": "string", 
-                    "description": "Status of the change request and it's a sub-state."
+                    "description": "Status of the change request and it\u00a1\u00afs a sub-state."
                 }, 
                 "attachment": {
                     "type": "array", 
                     "items": {
                         "$ref": "#/definitions/Attachment"
-                    }
+                    }, 
+                    "description": "The attachments of the communication message (when it is email type)."
                 }, 
                 "workLog": {
                     "$ref": "#/definitions/WorkLog"
@@ -1219,12 +1209,6 @@
                         "$ref": "#/definitions/ImpactEntityRef"
                     }
                 }, 
-                "sla": {
-                    "type": "array", 
-                    "items": {
-                        "$ref": "#/definitions/SLARef"
-                    }
-                }, 
                 "changeRequestCharacteristic": {
                     "type": "array", 
                     "items": {
@@ -1241,6 +1225,22 @@
                     "type": "array", 
                     "items": {
                         "$ref": "#/definitions/RelatedPartyRef"
+                    }, 
+                    "description": "The parties involved by the change request"
+                }, 
+                "resolution": {
+                    "$ref": "#/definitions/Resolution"
+                }, 
+                "sla": {
+                    "type": "array", 
+                    "items": {
+                        "$ref": "#/definitions/SLARef"
+                    }
+                }, 
+                "relatedChangeRequest": {
+                    "type": "array", 
+                    "items": {
+                        "$ref": "#/definitions/RelatedChangeRequestRef"
                     }
                 }, 
                 "category": {
@@ -1249,34 +1249,97 @@
                         "$ref": "#/definitions/CategoryRef"
                     }
                 }, 
-                "resolution": {
-                    "$ref": "#/definitions/Resolution"
-                }, 
-                "relateChangeRequest": {
-                    "type": "array", 
-                    "items": {
-                        "$ref": "#/definitions/RelatedChangeRequestRef"
-                    }
-                }, 
                 "note": {
                     "type": "array", 
                     "items": {
                         "$ref": "#/definitions/Note"
                     }
                 }, 
-                "address": {
-                    "$ref": "#/definitions/GeographicAddressRef"
+                "location": {
+                    "$ref": "#/definitions/GeographicAddressRef", 
+                    "description": "The place at which the change request occurred."
+                }, 
+                "@type": {
+                    "type": "string", 
+                    "description": "The class type of the actual resource (for type extension)."
+                }, 
+                "@schemaLocation": {
+                    "type": "string", 
+                    "description": "A link to the schema describing a resource (for type extension)."
+                }, 
+                "@baseType": {
+                    "type": "string", 
+                    "description": "The base type for use in polymorphic collections"
+                }
+            }
+        }, 
+        "Attachment": {
+            "type": "object", 
+            "description": "Complements the description of an element (for instance a product) through video, pictures...", 
+            "properties": {
+                "description": {
+                    "type": "string", 
+                    "description": "A narrative text describing the content of the attachment"
+                }, 
+                "href": {
+                    "type": "string", 
+                    "description": "Reference of the attachment"
+                }, 
+                "id": {
+                    "type": "string", 
+                    "description": "Unique identifier of the attachment"
+                }, 
+                "mimeType": {
+                    "type": "string", 
+                    "description": "The mime type of the document as defined in RFC 2045 and RFC 2046 specifications."
+                }, 
+                "name": {
+                    "type": "string", 
+                    "description": "The name of the file"
+                }, 
+                "path": {
+                    "type": "string", 
+                    "description": "The path of the attached file"
+                }, 
+                "size": {
+                    "type": "integer", 
+                    "description": "The size of the file (sizeUnit if present indicates the unit, otherwise kilobytes is the default)."
+                }, 
+                "sizeUnit": {
+                    "type": "integer", 
+                    "description": "The unit size for expressing the size of the file (MB,kB...)"
+                }, 
+                "url": {
+                    "type": "string", 
+                    "description": "Uniform Resource Locator, is a web page address (a subset of URI)"
+                }, 
+                "validFor": {
+                    "$ref": "#/definitions/TimePeriod", 
+                    "description": "Period of validity of the attachment"
+                }, 
+                "@type": {
+                    "type": "string", 
+                    "description": "The class type of the actual resource (for type extension)."
+                }, 
+                "@schemaLocation": {
+                    "type": "string", 
+                    "description": "A link to the schema describing a resource (for type extension)."
+                }, 
+                "@baseType": {
+                    "type": "string", 
+                    "description": "The base type for use in polymorphic collections"
                 }
             }
         }, 
         "WorkLog": {
             "type": "object", 
             "description": "A record of the work performed on the change request during the investigation and resolution process.", 
-			 "required": [
-                "creatDateTime"
+            "required": [
+                "createDateTime", 
+                "record"
             ], 
             "properties": {
-                "creatDateTime": {
+                "createDateTime": {
                     "type": "string", 
                     "format": "date-time", 
                     "description": "Date and time of worklog generated."
@@ -1294,6 +1357,10 @@
                     "items": {
                         "$ref": "#/definitions/Record"
                     }
+                }, 
+                "@type": {
+                    "type": "string", 
+                    "description": "The class type of the actual resource (for type extension)."
                 }
             }
         }, 
@@ -1308,16 +1375,20 @@
                 "name": {
                     "type": "string", 
                     "description": "The name of the incident."
+                }, 
+                "@type": {
+                    "type": "string", 
+                    "description": "The class type of the actual resource (for type extension)."
                 }
             }
         }, 
         "ChangeRequestSpecification": {
             "type": "object", 
-            "description": "Defines a set of attributes related to Change Request.",
+            "description": "Defines a set of attributes related to Change Request.", 
             "required": [
-                "id", 
-                "href"
-            ], 	
+                "href", 
+                "id"
+            ], 
             "properties": {
                 "description": {
                     "type": "string", 
@@ -1337,6 +1408,10 @@
                 }, 
                 "validFor": {
                     "$ref": "#/definitions/TimePeriod"
+                }, 
+                "@type": {
+                    "type": "string", 
+                    "description": "The class type of the actual resource (for type extension)."
                 }
             }
         }, 
@@ -1344,18 +1419,10 @@
             "type": "object", 
             "description": "Defines the entities (product, service, resource, and other related objects) which will be impacted while the change \nrequest is executed.", 
             "required": [
-                "id", 
-                "href"
-            ], 	
-			"properties": {
-                "@referredType": {
-                    "type": "string", 
-                    "description": "Indicates the type of resource. Here can be ImpactEntity."
-                }, 
-                "@schemaLocation": {
-                    "type": "string", 
-                    "description": "Link to schema describing this REST resource."
-                }, 
+                "href", 
+                "id"
+            ], 
+            "properties": {
                 "description": {
                     "type": "string", 
                     "description": "Description and analysis of the impact of the change request on the Product, Service or Resource."
@@ -1367,28 +1434,10 @@
                 "id": {
                     "type": "string", 
                     "description": "Identifier of impacted entity."
-                }
-            }
-        }, 
-        "SLARef": {
-            "type": "object", 
-            "description": "ServiceLevelAgreement reference: A service level agreement (SLA) is a type of agreement that represents a formal negotiated agreement between two parties designed to create a common understanding about products, services, priorities, responsibilities, and so forth. The SLA is a set of appropriate procedures and targets formally or informally agreed between parties in order to achieve and maintain specified Quality of Service.", 
-            "required": [
-                "id", 
-                "href"
-            ], 	
-			"properties": {
-                "href": {
-                    "type": "string", 
-                    "description": "Reference of the service level agreement"
                 }, 
-                "id": {
+                "@referredType": {
                     "type": "string", 
-                    "description": "Unique identifier of service level agreement"
-                }, 
-                "name": {
-                    "type": "string", 
-                    "description": "Name of the service level agreement"
+                    "description": "The actual type of the target instance when needed for disambiguation."
                 }
             }
         }, 
@@ -1398,7 +1447,7 @@
             "required": [
                 "name", 
                 "value"
-            ], 	
+            ], 
             "properties": {
                 "name": {
                     "type": "string", 
@@ -1407,19 +1456,25 @@
                 "value": {
                     "type": "string", 
                     "description": "Value of the characteristic."
+                }, 
+                "@type": {
+                    "type": "string", 
+                    "description": "The class type of the actual resource (for type extension)."
+                }, 
+                "@schemaLocation": {
+                    "type": "string", 
+                    "description": "A link to the schema describing a resource (for type extension)."
                 }
             }
         }, 
         "TargetEntityRef": {
             "type": "object", 
             "description": "The entity which will be changed or configured while the change request is executed.", 
+            "required": [
+                "href", 
+                "id"
+            ], 
             "properties": {
-                "@referredType": {
-                    "type": "string"
-                }, 
-                "@schemaLocation": {
-                    "type": "string"
-                }, 
                 "description": {
                     "type": "string", 
                     "description": "The description to the related party."
@@ -1431,52 +1486,50 @@
                 "id": {
                     "type": "string", 
                     "description": "Identifier of target entity"
+                }, 
+                "@referredType": {
+                    "type": "string", 
+                    "description": "The actual type of the target instance when needed for disambiguation."
                 }
             }
         }, 
         "RelatedPartyRef": {
             "type": "object", 
-            "description": "relatedParty (RelatedPartyRef). The party which the recommendation is related with.", 
+            "description": "RelatedParty reference. A related party defines party or party role linked to a specific entity.", 
+            "required": [
+                "href", 
+                "id"
+            ], 
             "properties": {
                 "href": {
                     "type": "string", 
-                    "description": "Hypertext Reference of the related party."
+                    "description": "Reference of the related party, could be a party reference or a party role reference"
                 }, 
                 "id": {
                     "type": "string", 
-                    "description": "Unique identifier of related party"
+                    "description": "Unique identifier of a related party"
                 }, 
                 "name": {
                     "type": "string", 
-                    "description": "Name of the related party."
+                    "description": "Name of the related party"
                 }, 
                 "role": {
                     "type": "string", 
                     "description": "Role of the related party."
-                }
-            }
-        }, 
-        "CategoryRef": {
-            "type": "object", 
-            "description": "the category of change request", 
-            "properties": {
-                "href": {
-                    "type": "string", 
-                    "description": "Hypertext Reference of the category"
                 }, 
-                "id": {
+                "@referredType": {
                     "type": "string", 
-                    "description": "Unique identifier of category"
-                }, 
-                "name": {
-                    "type": "string", 
-                    "description": "Name of the category."
+                    "description": "The actual type of the target instance when needed for disambiguation."
                 }
             }
         }, 
         "Resolution": {
             "type": "object", 
             "description": "The way one or more change request has been implementation through a direct remedy or task.", 
+            "required": [
+                "name", 
+                "description"
+            ], 
             "properties": {
                 "code": {
                     "type": "string", 
@@ -1495,6 +1548,36 @@
                     "items": {
                         "$ref": "#/definitions/Task"
                     }
+                }, 
+                "@type": {
+                    "type": "string", 
+                    "description": "The class type of the actual resource (for type extension)."
+                }
+            }
+        }, 
+        "SLARef": {
+            "type": "object", 
+            "description": "ServiceLevelAgreement reference: A service level agreement (SLA) is a type of agreement that represents a formal negotiated agreement between two parties designed to create a common understanding about products, services, priorities, responsibilities, and so forth. The SLA is a set of appropriate procedures and targets formally or informally agreed between parties in order to achieve and maintain specified Quality of Service.", 
+            "required": [
+                "id", 
+                "href"
+            ], 
+            "properties": {
+                "href": {
+                    "type": "string", 
+                    "description": "Reference of the service level agreement"
+                }, 
+                "id": {
+                    "type": "string", 
+                    "description": "Unique identifier of service level agreement"
+                }, 
+                "name": {
+                    "type": "string", 
+                    "description": "Name of the service level agreement"
+                }, 
+                "@referredType": {
+                    "type": "string", 
+                    "description": "The actual type of the target instance when needed for disambiguation."
                 }
             }
         }, 
@@ -1504,14 +1587,8 @@
             "required": [
                 "id", 
                 "href"
-            ], 	
-			"properties": {
-                "@referredType": {
-                    "type": "string"
-                }, 
-                "@schemaLocation": {
-                    "type": "string"
-                }, 
+            ], 
+            "properties": {
                 "correlation": {
                     "type": "string", 
                     "description": "The correlation between two change requests"
@@ -1527,35 +1604,32 @@
                 "id": {
                     "type": "string", 
                     "description": "Identifier of an Change Reques"
+                }, 
+                "@referredType": {
+                    "type": "string", 
+                    "description": "The actual type of the target instance when needed for disambiguation."
                 }
             }
         }, 
-        "Attachment": {
+        "CategoryRef": {
             "type": "object", 
-            "description": "Complements the description of an element (for instance a product) through video, pictures...", 
-			 "required": [
-                "href"
-            ], 
+            "description": "The category for grouping recommendations", 
             "properties": {
-                "description": {
-                    "type": "string", 
-                    "description": "A narrative text describing the content of the attachment"
-                }, 
                 "href": {
                     "type": "string", 
-                    "description": "Reference of the attachment"
+                    "description": "Hypertext Reference of the category"
                 }, 
                 "id": {
                     "type": "string", 
-                    "description": "Unique identifier of the attachment"
+                    "description": "Unique identifier of category"
                 }, 
-                "type": {
+                "name": {
                     "type": "string", 
-                    "description": "Attachment type such as video, picture"
+                    "description": "Name of the category."
                 }, 
-                "url": {
+                "@referredType": {
                     "type": "string", 
-                    "description": "Uniform Resource Locator, is a web page address (a subset of URI)"
+                    "description": "The actual type of the target instance when needed for disambiguation."
                 }
             }
         }, 
@@ -1575,21 +1649,16 @@
                 "text": {
                     "type": "string", 
                     "description": "Text of the note"
+                }, 
+                "@type": {
+                    "type": "string", 
+                    "description": "The class type of the actual resource (for type extension)."
                 }
             }
         }, 
         "GeographicAddressRef": {
             "type": "object", 
-            "description": "The place at whcih the change request occurred.", 
             "properties": {
-                "@referredType": {
-                    "type": "string", 
-                    "description": "Indicates the type of resource. Here can be address."
-                }, 
-                "@schemaLocation": {
-                    "type": "string", 
-                    "description": "Link to schema describing this REST resource."
-                }, 
                 "href": {
                     "type": "string", 
                     "description": "The detail address of the location."
@@ -1597,28 +1666,10 @@
                 "id": {
                     "type": "string", 
                     "description": "The post code of an address."
-                }
-            }
-        }, 
-        "Record": {
-            "type": "object", 
-            "description": "A record in a worklog.", 
-            "required": [
-                "dateTime"
-            ], 	
-			"properties": {
-                "dateTime": {
-                    "type": "string", 
-                    "format": "date-time", 
-                    "description": "The date time that a record is generated."
                 }, 
-                "description": {
+                "@referredType": {
                     "type": "string", 
-                    "description": "The detail description in a record."
-                }, 
-                "supportPerson": {
-                    "type": "string", 
-                    "description": "The person who logged that record."
+                    "description": "The actual type of the target instance when needed for disambiguation."
                 }
             }
         }, 
@@ -1638,6 +1689,29 @@
                 }
             }
         }, 
+        "Record": {
+            "type": "object", 
+            "description": "A record in a worklog.", 
+            "properties": {
+                "dateTime": {
+                    "type": "string", 
+                    "format": "date-time", 
+                    "description": "The date time that a record is generated."
+                }, 
+                "description": {
+                    "type": "string", 
+                    "description": "The detail description in a record."
+                }, 
+                "supportPerson": {
+                    "type": "string", 
+                    "description": "The person who logged that record."
+                }, 
+                "@type": {
+                    "type": "string", 
+                    "description": "The class type of the actual resource (for type extension)."
+                }
+            }
+        }, 
         "Task": {
             "type": "object", 
             "description": "A step or task along in the process of implementation a Change Request.", 
@@ -1653,6 +1727,10 @@
                 "state": {
                     "type": "string", 
                     "description": "The state of the task."
+                }, 
+                "@type": {
+                    "type": "string", 
+                    "description": "The class type of the actual resource (for type extension)."
                 }
             }
         }, 
@@ -1694,24 +1772,36 @@
         "Error": {
             "required": [
                 "code", 
-                "message"
+                "reason"
             ], 
             "properties": {
                 "code": {
                     "type": "integer", 
-                    "description": "An integer coding the error type. This is given to caller so he can translate them if required."
+                    "description": "Application related code."
+                }, 
+                "reason": {
+                    "type": "integer", 
+                    "description": "Text that explains the reason for error."
                 }, 
                 "message": {
                     "type": "string", 
-                    "description": "A short localized string that describes the error."
+                    "description": "(optional) Text that provide more details and corrective actions related to the error."
                 }, 
-                "description": {
-                    "type": "string", 
-                    "description": "(optional) A long localized error description if needed. It can contain precise information about which parameter is missing, or what are the identifier acceptable values."
+                "status": {
+                    "type": "integer", 
+                    "description": "(optional) http error code extension like 400-2"
                 }, 
-                "infoURL": {
+                "referenceError": {
                     "type": "string", 
                     "description": "(optional) A URL to online documentation that provides more information about the error."
+                }, 
+                "@type": {
+                    "type": "string", 
+                    "description": "(optional) The class type of a REST resource."
+                }, 
+                "@schemaLocation": {
+                    "type": "string", 
+                    "description": "(optional) A link to the schema describing a REST resource."
                 }
             }
         }
