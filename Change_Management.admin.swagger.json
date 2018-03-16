@@ -355,19 +355,19 @@
                     {
                         "in": "query", 
                         "type": "string", 
-                        "name": "changeRequestSpecification.name", 
+                        "name": "specification.name", 
                         "description": "For filtering on the base of 'name' field (equality)"
                     }, 
                     {
                         "in": "query", 
                         "type": "string", 
-                        "name": "changeRequestCharacteristic.name", 
+                        "name": "characteristic.name", 
                         "description": "For filtering on the base of 'name' field (equality)"
                     }, 
                     {
                         "in": "query", 
                         "type": "string", 
-                        "name": "changeRequestCharacteristic.value", 
+                        "name": "characteristic.value", 
                         "description": "For filtering on the base of 'value' field (equality)"
                     }, 
                     {
@@ -714,6 +714,9 @@
                             "$ref": "#/definitions/Error"
                         }
                     }, 
+                    "204": {
+                        "description": "Deleted"
+                    }, 
                     "500": {
                         "description": "Internal Server Error", 
                         "schema": {
@@ -732,7 +735,7 @@
                 "status", 
                 "priority", 
                 "targetEntity", 
-                "changeRequestSpecification"
+                "specification"
             ], 
             "properties": {
                 "actualEndTime": {
@@ -842,7 +845,7 @@
                         "$ref": "#/definitions/Incident"
                     }
                 }, 
-                "changeRequestSpecification": {
+                "specification": {
                     "$ref": "#/definitions/ChangeRequestSpecification"
                 }, 
                 "impactEntity": {
@@ -851,7 +854,7 @@
                         "$ref": "#/definitions/ImpactEntityRef"
                     }
                 }, 
-                "changeRequestCharacteristic": {
+                "characteristic": {
                     "type": "array", 
                     "items": {
                         "$ref": "#/definitions/ChangeRequestCharacteristic"
@@ -882,14 +885,16 @@
                 "relatedChangeRequest": {
                     "type": "array", 
                     "items": {
-                        "$ref": "#/definitions/RelatedChangeRequestRef"
-                    }
+                        "$ref": "#/definitions/ChangeRequestRef"
+                    }, 
+                    "description": "An existing Change Request that has some form of correlation with the given Change Request."
                 }, 
                 "category": {
                     "type": "array", 
                     "items": {
                         "$ref": "#/definitions/CategoryRef"
-                    }
+                    }, 
+                    "description": "The category of change request"
                 }, 
                 "note": {
                     "type": "array", 
@@ -922,7 +927,7 @@
                 "status", 
                 "priority", 
                 "targetEntity", 
-                "changeRequestSpecification"
+                "specification"
             ], 
             "properties": {
                 "actualEndTime": {
@@ -1024,7 +1029,7 @@
                         "$ref": "#/definitions/Incident"
                     }
                 }, 
-                "changeRequestSpecification": {
+                "specification": {
                     "$ref": "#/definitions/ChangeRequestSpecification"
                 }, 
                 "impactEntity": {
@@ -1033,7 +1038,7 @@
                         "$ref": "#/definitions/ImpactEntityRef"
                     }
                 }, 
-                "changeRequestCharacteristic": {
+                "characteristic": {
                     "type": "array", 
                     "items": {
                         "$ref": "#/definitions/ChangeRequestCharacteristic"
@@ -1064,14 +1069,16 @@
                 "relatedChangeRequest": {
                     "type": "array", 
                     "items": {
-                        "$ref": "#/definitions/RelatedChangeRequestRef"
-                    }
+                        "$ref": "#/definitions/ChangeRequestRef"
+                    }, 
+                    "description": "An existing Change Request that has some form of correlation with the given Change Request."
                 }, 
                 "category": {
                     "type": "array", 
                     "items": {
                         "$ref": "#/definitions/CategoryRef"
-                    }
+                    }, 
+                    "description": "The category of change request"
                 }, 
                 "note": {
                     "type": "array", 
@@ -1200,7 +1207,7 @@
                         "$ref": "#/definitions/Incident"
                     }
                 }, 
-                "changeRequestSpecification": {
+                "specification": {
                     "$ref": "#/definitions/ChangeRequestSpecification"
                 }, 
                 "impactEntity": {
@@ -1209,7 +1216,7 @@
                         "$ref": "#/definitions/ImpactEntityRef"
                     }
                 }, 
-                "changeRequestCharacteristic": {
+                "characteristic": {
                     "type": "array", 
                     "items": {
                         "$ref": "#/definitions/ChangeRequestCharacteristic"
@@ -1240,14 +1247,16 @@
                 "relatedChangeRequest": {
                     "type": "array", 
                     "items": {
-                        "$ref": "#/definitions/RelatedChangeRequestRef"
-                    }
+                        "$ref": "#/definitions/ChangeRequestRef"
+                    }, 
+                    "description": "An existing Change Request that has some form of correlation with the given Change Request."
                 }, 
                 "category": {
                     "type": "array", 
                     "items": {
                         "$ref": "#/definitions/CategoryRef"
-                    }
+                    }, 
+                    "description": "The category of change request"
                 }, 
                 "note": {
                     "type": "array", 
@@ -1581,7 +1590,7 @@
                 }
             }
         }, 
-        "RelatedChangeRequestRef": {
+        "ChangeRequestRef": {
             "type": "object", 
             "description": "An existing Change Request that has some form of correlation with the given Change Request.", 
             "required": [
