@@ -1285,6 +1285,10 @@
         "Attachment": {
             "type": "object", 
             "description": "Complements the description of an element (for instance a product) through video, pictures...", 
+            "required": [
+                "href", 
+                "id"
+            ], 
             "properties": {
                 "description": {
                     "type": "string", 
