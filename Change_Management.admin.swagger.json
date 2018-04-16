@@ -903,7 +903,7 @@
                     }
                 }, 
                 "location": {
-                    "$ref": "#/definitions/GeographicAddressRef", 
+                    "$ref": "#/definitions/Place", 
                     "description": "The place at which the change request occurred."
                 }, 
                 "@type": {
@@ -1087,7 +1087,7 @@
                     }
                 }, 
                 "location": {
-                    "$ref": "#/definitions/GeographicAddressRef", 
+                    "$ref": "#/definitions/Place", 
                     "description": "The place at which the change request occurred."
                 }, 
                 "@type": {
@@ -1265,7 +1265,7 @@
                     }
                 }, 
                 "location": {
-                    "$ref": "#/definitions/GeographicAddressRef", 
+                    "$ref": "#/definitions/Place", 
                     "description": "The place at which the change request occurred."
                 }, 
                 "@type": {
@@ -1669,7 +1669,7 @@
                 }
             }
         }, 
-        "GeographicAddressRef": {
+        "Place": {
             "type": "object", 
             "properties": {
                 "href": {
@@ -1680,9 +1680,9 @@
                     "type": "string", 
                     "description": "The post code of an address."
                 }, 
-                "@referredType": {
+                "role": {
                     "type": "string", 
-                    "description": "The actual type of the target instance when needed for disambiguation."
+                    "description": "The role of the place (e.g. delivery address, install site etc)."
                 }
             }
         }, 
