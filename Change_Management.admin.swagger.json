@@ -5,7 +5,7 @@
         "description": "This is Swagger UI environment generated for the TMF Change Management specification", 
         "version": "2.0"
     }, 
-    "host": "biologeek.orange-labs.fr", 
+    "host": "serverRoot", 
     "basePath": "/tmf-api/changeManagement/v2/", 
     "schemes": [
         "https"
@@ -462,6 +462,24 @@
                             "$ref": "#/definitions/Error"
                         }
                     }, 
+					"404": {
+                        "description": "Not Found", 
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }, 
+                    "405": {
+                        "description": "Method Not allowed", 
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }, 
+                    "409": {
+                        "description": "Conflict", 
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }, 
                     "500": {
                         "description": "Internal Server Error", 
                         "schema": {
@@ -499,7 +517,25 @@
                         "schema": {
                             "$ref": "#/definitions/Error"
                         }
+                    },
+                    "404": {
+                        "description": "Not Found", 
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
                     }, 
+                    "405": {
+                        "description": "Method Not allowed", 
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }, 
+                    "409": {
+                        "description": "Conflict", 
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }, 					
                     "500": {
                         "description": "Internal Server Error", 
                         "schema": {
@@ -547,6 +583,18 @@
                             "$ref": "#/definitions/Error"
                         }
                     }, 
+					"405": {
+                        "description": "Method Not allowed", 
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }, 
+                    "409": {
+                        "description": "Conflict", 
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }, 
                     "500": {
                         "description": "Internal Server Error", 
                         "schema": {
@@ -580,7 +628,7 @@
                     }
                 ], 
                 "responses": {
-                    "201": {
+                    "200": {
                         "description": "Updated", 
                         "schema": {
                             "$ref": "#/definitions/ChangeRequest"
@@ -594,6 +642,18 @@
                     }, 
                     "404": {
                         "description": "Not Found", 
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }, 
+					"405": {
+                        "description": "Method Not allowed", 
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }, 
+                    "409": {
+                        "description": "Conflict", 
                         "schema": {
                             "$ref": "#/definitions/Error"
                         }
@@ -633,6 +693,18 @@
                     }, 
                     "404": {
                         "description": "Not Found", 
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }, 
+					"405": {
+                        "description": "Method Not allowed", 
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }, 
+                    "409": {
+                        "description": "Conflict", 
                         "schema": {
                             "$ref": "#/definitions/Error"
                         }
@@ -1285,10 +1357,6 @@
         "Attachment": {
             "type": "object", 
             "description": "Complements the description of an element (for instance a product) through video, pictures...", 
-            "required": [
-                "href", 
-                "id"
-            ], 
             "properties": {
                 "description": {
                     "type": "string", 
