@@ -1748,9 +1748,17 @@
                     "type": "string", 
                     "description": "The post code of an address."
                 }, 
+                "name": {
+                    "type": "string", 
+                    "description": "A user-friendly name for the place, such as \"Paris Store\", \"London Store\", \"Main Home\""
+                }, 
                 "role": {
                     "type": "string", 
-                    "description": "The role of the place (e.g. delivery address, install site etc)."
+                    "description": "Role of the place (for instance: 'home delivery', 'shop retrieval')"
+                }, 
+                "@type": {
+                    "type": "string", 
+                    "description": "The class type of the actual resource (for type extension)."
                 }
             }
         }, 
