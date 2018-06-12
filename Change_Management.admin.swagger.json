@@ -686,7 +686,7 @@
                         "$ref": "#/definitions/Note"
                     }
                 }, 
-                "place": {
+                "location": {
                     "$ref": "#/definitions/Place", 
                     "description": "The place at which the change request occurred."
                 }, 
@@ -870,7 +870,7 @@
                         "$ref": "#/definitions/Note"
                     }
                 }, 
-                "place": {
+                "location": {
                     "$ref": "#/definitions/Place", 
                     "description": "The place at which the change request occurred."
                 }, 
@@ -1048,7 +1048,7 @@
                         "$ref": "#/definitions/Note"
                     }
                 }, 
-                "place": {
+                "location": {
                     "$ref": "#/definitions/Place", 
                     "description": "The place at which the change request occurred."
                 }, 
@@ -1154,6 +1154,14 @@
                 "@type": {
                     "type": "string", 
                     "description": "The class type of the actual resource (for type extension)."
+                },
+				"@schemaLocation": {
+                    "type": "string", 
+                    "description": "A link to the schema describing a resource (for type extension)."
+                }, 
+                "@baseType": {
+                    "type": "string", 
+                    "description": "The base type for use in polymorphic collections"
                 }
             }
         }, 
@@ -1172,6 +1180,14 @@
                 "@type": {
                     "type": "string", 
                     "description": "The class type of the actual resource (for type extension)."
+                },
+				"@schemaLocation": {
+                    "type": "string", 
+                    "description": "A link to the schema describing a resource (for type extension)."
+                }, 
+                "@baseType": {
+                    "type": "string", 
+                    "description": "The base type for use in polymorphic collections"
                 }
             }
         }, 
@@ -1205,6 +1221,14 @@
                 "@type": {
                     "type": "string", 
                     "description": "The class type of the actual resource (for type extension)."
+                },
+				"@schemaLocation": {
+                    "type": "string", 
+                    "description": "A link to the schema describing a resource (for type extension)."
+                }, 
+                "@baseType": {
+                    "type": "string", 
+                    "description": "The base type for use in polymorphic collections"
                 }
             }
         }, 
@@ -1249,14 +1273,6 @@
                 "value": {
                     "type": "string", 
                     "description": "Value of the characteristic."
-                }, 
-                "@type": {
-                    "type": "string", 
-                    "description": "The class type of the actual resource (for type extension)."
-                }, 
-                "@schemaLocation": {
-                    "type": "string", 
-                    "description": "A link to the schema describing a resource (for type extension)."
                 }
             }
         }, 
@@ -1345,6 +1361,14 @@
                 "@type": {
                     "type": "string", 
                     "description": "The class type of the actual resource (for type extension)."
+                },
+				"@schemaLocation": {
+                    "type": "string", 
+                    "description": "A link to the schema describing a resource (for type extension)."
+                }, 
+                "@baseType": {
+                    "type": "string", 
+                    "description": "The base type for use in polymorphic collections"
                 }
             }
         }, 
@@ -1442,10 +1466,6 @@
                 "text": {
                     "type": "string", 
                     "description": "Text of the note"
-                }, 
-                "@type": {
-                    "type": "string", 
-                    "description": "The class type of the actual resource (for type extension)."
                 }
             }
         }, 
@@ -1472,6 +1492,18 @@
                 "@type": {
                     "type": "string", 
                     "description": "The class type of the actual resource (for type extension)."
+                },
+				"@referredType": {
+                    "type": "string", 
+                    "description": "The actual type of the target instance when needed for disambiguation."
+                },
+				"@schemaLocation": {
+                    "type": "string", 
+                    "description": "A link to the schema describing a resource (for type extension)."
+                }, 
+                "@baseType": {
+                    "type": "string", 
+                    "description": "The base type for use in polymorphic collections"
                 }
             }
         }, 
@@ -1511,6 +1543,14 @@
                 "@type": {
                     "type": "string", 
                     "description": "The class type of the actual resource (for type extension)."
+                },
+				"@schemaLocation": {
+                    "type": "string", 
+                    "description": "A link to the schema describing a resource (for type extension)."
+                }, 
+                "@baseType": {
+                    "type": "string", 
+                    "description": "The base type for use in polymorphic collections"
                 }
             }
         }, 
@@ -1533,6 +1573,14 @@
                 "@type": {
                     "type": "string", 
                     "description": "The class type of the actual resource (for type extension)."
+                },
+				"@schemaLocation": {
+                    "type": "string", 
+                    "description": "A link to the schema describing a resource (for type extension)."
+                }, 
+                "@baseType": {
+                    "type": "string", 
+                    "description": "The base type for use in polymorphic collections"
                 }
             }
         }, 
